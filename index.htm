@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot for INR 29</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #chat-section {
+            display: none;
+            margin-top: 20px;
+        }
+        #payment-section {
+            margin-top: 50px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the INR 29 Chatbot Service</h1>
+
+    <div id="payment-section">
+        <p>To start chatting with our expert bot, please pay INR 29 to continue.</p>
+        <button id="pay-now">Simulate Payment</button>
+    </div>
+
+    <div id="chat-section">
+        <h2>Your chat session has started</h2>
+        <iframe
+            allow="microphone;"
+            width="350"
+            height="430"
+            src="https://console.dialogflow.com/api-client/demo/embedded/{your-dialogflow-agent-id}">
+        </iframe>
+    </div>
+
+    <script>
+        document.getElementById('pay-now').onclick = function() {
+            // Simulate the payment process
+            alert('Payment Successful! INR 29 has been deducted from your account.');
+            
+            // Hide payment section and show chat section
+            document.getElementById('payment-section').style.display = 'none';
+            document.getElementById('chat-section').style.display = 'block';
+
+            // Timer for 30 minutes (optional)
+            setTimeout(function() {
+                alert('Your 30-minute chat session has ended. Please pay again to continue.');
+                document.getElementById('chat-section').style.display = 'none';
+                document.getElementById('payment-section').style.display = 'block';
+            }, 30 * 60 * 1000); // 30 minutes in milliseconds
+        };
+    </script>
+
+</body>
+</html>
